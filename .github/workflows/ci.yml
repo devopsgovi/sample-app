@@ -31,7 +31,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::007427784670:role/github-actions-ecr-role
+          role-to-assume: arn:aws:iam::238540685354:role/github-actions-ecr-role
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to ECR
@@ -80,7 +80,7 @@ jobs:
       - name: Update image tag
         run: |
           cd manifests/overlays/prod
-          kustomize edit set image 007427784670.dkr.ecr.ap-south-1.amazonaws.com/sample-app=007427784670.dkr.ecr.ap-south-1.amazonaws.com/sample-app:${{ needs.build-and-push.outputs.image_tag }}
+          kustomize edit set image 238540685354.dkr.ecr.ap-south-1.amazonaws.com/sample-app=238540685354.dkr.ecr.ap-south-1.amazonaws.com/sample-app:${{ needs.build-and-push.outputs.image_tag }}
 
       - name: Commit and push changes
         run: |

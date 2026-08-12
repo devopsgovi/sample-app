@@ -3,18 +3,22 @@ kind: Application
 metadata:
   name: sample-app
   namespace: argocd
+
 spec:
   project: default
+
   source:
-    repoURL: https://github.com/deopura/sample-app.git
+    repoURL: https://github.com/devopsgovi/sample-app.git
     targetRevision: main
     path: manifests/overlays/prod
+
   destination:
     server: https://kubernetes.default.svc
     namespace: sample-app
+
   syncPolicy:
     automated:
-      prune: true       # deletes resources removed from Git
-      selfHeal: true     # reverts manual kubectl edits back to Git state
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
