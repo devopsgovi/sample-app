@@ -19,17 +19,21 @@ spec:
           image: 238540685354.dkr.ecr.ap-south-1.amazonaws.com/sample-app:latest
           ports:
             - containerPort: 8080
+
           readinessProbe:
             httpGet:
-              path: /
+              path: /health
               port: 8080
             initialDelaySeconds: 5
+            periodSeconds: 5
+
           livenessProbe:
             httpGet:
-              path: /
+              path: /health
               port: 8080
             initialDelaySeconds: 10
-          resources:
+            periodSeconds: 10
+          resources:  
             requests:
               cpu: 100m
               memory: 128Mi
