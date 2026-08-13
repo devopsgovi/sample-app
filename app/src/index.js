@@ -3,6 +3,6 @@ const port = process.env.PORT || 8080;
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello from Govind CI/CD sample-app! Version: ' + (process.env.APP_VERSION || 'dev') + '\n');
+  res.end('Hello from Fully Automated CI/CD Pipeline!' + '\n');
 }).listen(port, () => console.log(`Listening on ${port}`));
 // test change
