@@ -4,12 +4,11 @@ const port = process.env.PORT || 8080;
 
 http.createServer((req, res) => {
 
-  if (req.url === '/health') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('OK\n');
-    return;
-  }
-
+if (req.url === '/health') {
+  res.writeHead(500, { 'Content-Type': 'text/plain' });
+  res.end('NOT HEALTHY\n');
+  return;
+}
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello from Fully Automated CI/CD Pipeline!\n');
 
