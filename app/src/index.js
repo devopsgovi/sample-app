@@ -10,7 +10,7 @@ if (req.url === '/health') {
   return;
 }
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello from Rolling Update Version 2!\n');
+  res.end('Hello from Fully Automated CI/CD Pipeline!\n');
 
 }).listen(port, () => {
   console.log(`Listening on ${port}`);
